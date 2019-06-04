@@ -7,7 +7,7 @@ Usage:
   $0
 
 Description:
-  ２つの自然数の最大公約数を求めます。
+  ２つの自然数の最大公約数を求めます。2つの自然数をスペース区切りで入力してください
 
 Options:
   -h    マニュアルを表示
@@ -21,8 +21,6 @@ if [ "$1" == "-h" ]; then
   usage
   exit 0
 fi
-
-echo '2つの自然数をスペース区切りで入力してください'
 
 # 入力パラメータを読み込む
 read a b
@@ -48,7 +46,7 @@ do
 
   if [ $x -eq 0 -a $y -eq 0 ]; then
     # Printing the greatest gcd of two given number
-    echo "$a と $b の最大公約数は $m  です"
+    echo "$m"
     break
   fi
   m=`expr $m - 1`
