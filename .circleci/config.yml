@@ -5,7 +5,7 @@ jobs:
       - image: circleci/buildpack-deps:latest
     steps:
       - checkout
-      - run: sh ../gcd-test.sh
+      - run: sh gcd-test.sh
 workflows:
   version: 2
   run_test:
