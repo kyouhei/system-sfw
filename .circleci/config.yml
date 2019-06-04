@@ -1,9 +1,10 @@
 version: 2.1
-jobs:
-  test:
-    steps:
-      - run: sh ../gcd-test.sh
-workflows:
-  test:
+
+orbs:
+  hello: namespace/orb@dev:0.0.1
+
+  workflows:
+    hello-workflow:
     jobs:
-      - test
+        - hello/hello-build
+        - run: ../gcd-test.sh
