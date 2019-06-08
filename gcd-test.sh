@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo '2と22の最大公約数は2'
 x=$( yes ' 2 22' | (./gcd.sh) )
 if [ $x = 2 ]; then

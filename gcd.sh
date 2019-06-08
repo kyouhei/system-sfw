@@ -22,32 +22,29 @@ if [ "$1" == "-h" ]; then
   exit 0
 fi
 
-# 入力パラメータを読み込む
-read a b
-
-# 引数のチェック
-if [ -z $a -o -z $b ]; then
- echo "実行するにはスペース区切りで2個の自然数が必要です。" 1>&2
- exit 1
+# 2つの引数が必要
+if [ $# != 2 ]; then
+echo "実行するにはスペース区切りで2個の自然数が必要です。" 1>&2
+  exit 1
 fi
 
-m=$a
+m=$1
 
-if [ $b -lt $m ]
+if [ $2 -lt $m ]
 then
-  m=$b
+  m=$2
 fi
 
 # 最大公約数を求める
 while [ $m -ne 0 ]
 do
-  x=`expr $a % $m`
-  y=`expr $b % $m`
+  x=`expr $1 % $m`
+  y=`expr $2 % $m`
 
   if [ $x -eq 0 -a $y -eq 0 ]; then
-    # Printing the greatest gcd of two given number
+    # 最大公約数を表示
     echo "$m"
-    break
+    exit 1
   fi
   m=`expr $m - 1`
 done
