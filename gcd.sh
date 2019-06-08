@@ -44,7 +44,7 @@ do
   if [ $x -eq 0 -a $y -eq 0 ]; then
     # 最大公約数を表示
     echo "$m"
-    exit 1
+    exit 0
   fi
   m=`expr $m - 1`
 done
