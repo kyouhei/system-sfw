@@ -1,0 +1,6 @@
+## Description
+Compute the greatest common measure.
+
+## How to use
+sh gcd.sh 5 7
+
